@@ -17,3 +17,6 @@ export const sendContactEmail = async (req: Request, res: Response, next: NextFu
   }
 };
 
+export const ping = (_req: Request, res: Response) => {
+  res.status(200).send("Backend activo 🚀");
+};
