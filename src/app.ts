@@ -8,7 +8,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// CORS restrictivo para solo permitir el frontend
+const allowedOrigin = process.env.FRONTEND_URL || "http://localhost:3000";
+
+app.use(
+  cors({
+    origin: allowedOrigin,
+    methods: ["POST"],
+    credentials: false,
+  })
+);
+
 app.use(express.json());
 
 app.use("/api/contact", contactRoutes);
