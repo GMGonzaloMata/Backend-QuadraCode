@@ -49,7 +49,7 @@ export const sendMail2 = async ({
 }: ContactData2) => {
   const mailOptions = {
     from: `"Página Lossa" <${process.env.EMAIL_FROM}>`,
-    to: process.env.EMAIL_TO,
+    to: process.env.EMAIL_TO2,
     subject: "Nuevo mensaje desde el formulario",
     html: `
       <h3>Nuevo mensaje desde la web</h3>
